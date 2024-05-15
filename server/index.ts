@@ -11,10 +11,10 @@ app.get("/", (request: Request, response: Response) => {
 })
 
 app.listen(PORT, async () => {
-    await sequelize.authenticate()
-    await sequelize.sync({ force: true })
+    await sequelize.authenticate();
 
     console.log(`Server is running on port: ${PORT}`)
-}).on("error", (err) => {
+}).on("error", async (err) => {
+    await sequelize.close();
     throw new Error(err.message)
 })

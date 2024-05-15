@@ -4,7 +4,7 @@ module.exports = {
   development: {
     username: 'postgres',
     password: 'postgres123',
-    database: 'database-development',
+    database: 'database_development',
     host: 'localhost',
     port: 5432,
     dialect: 'postgres',
@@ -32,9 +32,6 @@ module.exports = {
     dialect: 'mysql',
     dialectOptions: {
       bigNumberStrings: true,
-      ssl: {
-        ca: fs.readFileSync(__dirname + '/mysql-ca-main.crt'),
-      },
     },
   }, 
 }
