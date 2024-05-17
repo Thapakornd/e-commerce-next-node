@@ -1,7 +1,6 @@
 import { getSession } from "@auth0/nextjs-auth0";
 
 import React from 'react'
-import Logout from "../logout";
 
 export default async function ProfileServer(){
   

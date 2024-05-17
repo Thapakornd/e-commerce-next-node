@@ -1,6 +1,16 @@
 const fs = require('fs')
+import { Dialect } from "sequelize";
 
-module.exports = {
+interface SequelizeConfig {
+  database: string;
+  username: string;
+  password: string;
+  host: string;
+  dialect: Dialect
+  port: number | undefined;
+}
+
+export default {
   development: {
     username: 'postgres',
     password: 'postgres123',
@@ -11,7 +21,7 @@ module.exports = {
     dialectOptions: {
       bigNumberStrings: true,
     },
-  },
+  } as SequelizeConfig,
   test: {
     username: process.env.CI_DB_USERNAME,
     password: process.env.CI_DB_PASSWORD,
@@ -22,16 +32,16 @@ module.exports = {
     dialectOptions: {
       bigNumberStrings: true,
     },
-  },
+  } as SequelizeConfig,
   production: {
     username: process.env.PROD_DB_USERNAME,
     password: process.env.PROD_DB_PASSWORD,
     database: process.env.PROD_DB_NAME,
     host: process.env.PROD_DB_HOSTNAME,
     port: process.env.PROD_DB_PORT,
-    dialect: 'mysql',
+    dialect: 'postgres',
     dialectOptions: {
       bigNumberStrings: true,
     },
-  }, 
+  } as SequelizeConfig, 
 }
