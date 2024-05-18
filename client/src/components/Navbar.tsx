@@ -19,8 +19,15 @@ const Navbar = () => {
               <li>Brands</li>
             </ul>
           </div>
-          <div className="search-bar bg-[#F0F0F0] w-[36rem] px-[1rem]">
-            dsadsa
+          <div className="search-bar bg-[#F0F0F0] pl-[3.25rem] relative rounded-3xl py-[0.75rem]">
+            <input type="text" className=' bg-[#F0F0F0] w-[36rem] outline-none' placeholder='Search for products...' />
+            <Image 
+              alt='search-product'
+              className=' absolute top-[0.75rem] left-[1rem]'
+              src={'/homepage/magnify-glass.svg'}
+              width={24}
+              height={24}
+            />
           </div>
           <div className="cart-profile flex gap-[0.88rem]">
             <Image 
